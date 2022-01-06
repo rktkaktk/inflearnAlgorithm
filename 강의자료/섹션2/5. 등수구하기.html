@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        // 이중 for문
+        let answer = Array.from({ length: arr.length }, () => 1);
+
+        arr.forEach((score, idx) => {
+          // 이중for문 돌려서 나보다 크면 등수 +1
+          arr.forEach((innerScore) => {
+            if (score < innerScore) {
+              answer[idx] = answer[idx] += 1;
+            }
+          });
+        });
+
+        return answer;
+      }
+
+      let arr = [92, 92, 92, 100, 76];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>

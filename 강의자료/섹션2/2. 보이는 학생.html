@@ -1,0 +1,43 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      // function solution(arr) {
+      //   // 가장큰 수
+      //   let biggistHeight = arr[0];
+      //   // 보이는 학생 수
+      //   let showStudents = [arr[0]];
+
+      //   arr.forEach((height, idx) => {
+      //     if (height > biggistHeight) {
+      //       biggistHeight = height;
+      //       showStudents.push(height);
+      //     }
+      //   });
+
+      //   return showStudents.length;
+      // }
+
+      function solution(arr) {
+        let answer = 0;
+        // 가장큰 수
+        let biggistHeight = Number.MIN_SAFE_INTEGER;
+
+        arr.forEach((height, idx) => {
+          if (height > biggistHeight) {
+            biggistHeight = height;
+            answer++;
+          }
+        });
+
+        return answer;
+      }
+
+      let arr = [130, 135, 148, 140, 145, 150, 150, 153];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>

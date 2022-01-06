@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+
+  <body>
+    <script>
+      // function solution1(a, b, c) {
+      //   let numbers = Array.from(arguments);
+      //   let rowNum = numbers[0];
+
+      //   numbers.forEach((num, idx) => {
+      //     if (rowNum > num) {
+      //       rowNum = num;
+      //     }
+      //   });
+
+      //   return rowNum;
+      // }
+
+      // console.log('solution1');
+      // console.log(solution1(2, 5, 1));
+
+      function solution2(...numbers) {
+        const number = [];
+        console.log(numbers);
+        // let numbers = [a, b, c];
+        let rowNum = numbers[0];
+
+        for (let i = 1; i < numbers.length; i++) {
+          if (rowNum > numbers[i]) {
+            rowNum = numbers[i];
+          }
+        }
+
+        return rowNum;
+      }
+
+      console.log('solution2');
+      console.log(solution2(2, 5, 1));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = [];
+        for (const word of str) {
+          !answer.includes(word) && answer.push(word);
+        }
+
+        return answer.join();
+      }
+
+      function solution(s) {
+        const answer = s.filter((word, idx) => s.indexOf(word) === idx);
+
+        return answer.join();
+      }
+
+      let str = ['good', 'time', 'good', 'time', 'student'];
+      console.log(solution(str));
+    </script>
+  </body>
+</html>

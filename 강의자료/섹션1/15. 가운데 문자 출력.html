@@ -1,0 +1,37 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      // function solution(s) {
+      //   // 1. 문자열 길이 구하기.
+      //   // 1-1. 문자열 길이 홀짝여부 판단.
+      //   // 1-1-1. 홀짝 여부에 따라서 개수가 달라짐 (홀: 1, 짝: 2)
+      //   // 1-2. 문자열 길이 구해서 / 2
+      //   const textCnt = s.length;
+      //   const cutCnt = textCnt % 2 === 0 ? 2 : 1;
+      //   const mid = Math.floor(textCnt / 2);
+
+      //   return s.substr(mid, cutCnt);
+      // }
+      // console.log(solution('stud11'));
+
+      function solution(s) {
+        // 문자열 길이 구하기.
+        // 문자열 길이 구해서 / 2
+        // 문자열 길이 홀짝여부 판단해서 문자열 자르기
+        const textCnt = s.length;
+        const mid = Math.floor(textCnt / 2);
+
+        if (textCnt % 2 === 0) {
+          return s.substring(mid - 1, mid + 1);
+        } else {
+          return s.substring(mid, mid + 1);
+        }
+      }
+      console.log(solution('stud11'));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        // 비교할 대상이 필요하지 않을까?
+        // 배열에? 아니면 문자열?
+        let answer = '';
+
+        for (const word of s) {
+          answer += answer.includes(word) ? '' : word;
+        }
+
+        return answer;
+      }
+
+      function solution(s) {
+        // indexOf를 이용한 방법
+        let answer = '';
+
+        for (let i = 0; i < s.length; i++) {
+          if (s.indexOf(s[i]) === i) {
+            answer += s[i];
+          }
+        }
+
+        return answer;
+      }
+      console.log(solution('ksekkset'));
+    </script>
+  </body>
+</html>

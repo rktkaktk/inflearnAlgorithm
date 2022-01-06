@@ -1,0 +1,28 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(...numbers) {
+        // 가장 큰수를 따로 분리
+        // 가장 큰수(highNum)와 나머지 두개의 수 합(sumRowNum)을 비교
+        // sumRowNum의 값이 highNum보다 크면 true 아니면 false
+        const highNum = Math.max(...numbers);
+        // const sumRowNums = numbers
+        //                     .filter((num) => num !== highNum)
+        //                     .reduce((prev, current) => prev + current);
+
+        // return sumRowNums > highNum ? true : false;
+
+        const sumNums = numbers.reduce((prev, current) => prev + current);
+
+        return sumNums - highNum > highNum ? true : false;
+      }
+
+      console.log(solution(13, 33, 17));
+      console.log(solution(6, 7, 11));
+    </script>
+  </body>
+</html>

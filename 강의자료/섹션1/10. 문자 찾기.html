@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s, t) {
+        console.log('for ...of');
+        let answer = 0;
+
+        for (let i = 0; i < s.length; i++) {
+          if (i === 100) break;
+
+          if (s[i] === t) {
+            answer += 1;
+          }
+        }
+
+        return answer;
+      }
+
+      // function solution(s, t) {
+      //   console.log('filter');
+      //   let answer;
+
+      //   answer = Array.from(s).filter((text) => text === t).length;
+
+      //   return answer;
+      // }
+
+      // function solution(s, t) {
+      //   console.log('split');
+      //   return s.split(t).length - 1;
+      // }
+
+      let str = 'COMPUTERPROGRAMMING';
+      console.log(solution(str, 'R'));
+    </script>
+  </body>
+</html>

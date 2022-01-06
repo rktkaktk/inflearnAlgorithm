@@ -1,0 +1,53 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      /**
+       * 주어진 9개의 수 중 7개의 수를 이용해 합을 100으로 만들수 있는 수를 return
+       */
+      // function solution(arr) {
+      //   // 7개 수의 합이 100
+      //   const sumLimit = 100;
+      //   let sums = [];
+
+      //   // loop로 주어진 수들의 합 구하기
+      //   arr.forEach((num, idx) => {
+      //     // 초기 배열 생성
+      //     sums.push({ sum: num, nums: [num] });
+      //     // 첫번째 선택 수 제외하고 2차 loop
+      //     arr.forEach((innerNum, innerIdx) => {
+      //       if (innerIdx !== idx) {
+      //         if (sumLimit >= sums[idx].sum + arr[innerIdx]) {
+      //           sums[idx].sum += arr[innerIdx];
+      //           sums[idx].nums.push(arr[innerIdx]);
+      //         }
+      //       }
+      //     });
+      //   });
+
+      //   return sums.find(({ sum, nums }) => nums.length === 7 && sum === 100).nums.join();
+      // }
+
+      function solution(arr) {
+        const answer = [...arr];
+        const sum = answer.reduce((prev, current) => prev + current);
+
+        answer.forEach((num, idx) => {
+          for (let i = idx + 1; answer.length > i; i++) {
+            if (sum - (num + answer[i]) === 100) {
+              answer.splice(idx, 2);
+            }
+          }
+        });
+
+        return answer;
+      }
+
+      let arr = [20, 7, 23, 19, 10, 15, 25, 8, 13];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
